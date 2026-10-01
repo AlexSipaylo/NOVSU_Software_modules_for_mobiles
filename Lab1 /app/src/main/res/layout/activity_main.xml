@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Калькулятор поездки в такси"
+            android:textAlignment="center"
+            android:textColor="#1D1B20"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/carLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Класс автомобиля"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/titleText" />
+
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/carGroup"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:checkedButton="@id/carEconomy"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/carLabel"
+            app:singleSelection="true">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/carEconomy"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Эконом"
+                app:backgroundTint="@color/dark_orange" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/carComfort"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Комфорт"
+                app:backgroundTint="@color/crimson" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/carBusiness"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Бизнес"
+                app:backgroundTint="@color/indigo" />
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+
+
+        <TextView
+            android:id="@+id/zoneLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Тарифная зона"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/carGroup" />
+
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/zoneGroup"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:checkedButton="@id/zoneCity"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/zoneLabel"
+            app:singleSelection="true">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/zoneCity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Город"
+                app:backgroundTint="@color/chocolate" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/zoneOut"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="За городом"
+                app:backgroundTint="@color/saddlebrown" />
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/kmLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="Расстояние (км.)"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/zoneGroup">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/kmInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:text="5" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/minLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:hint="Время (мин.)"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/kmLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/minInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:text="10" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <TextView
+            android:id="@+id/passengerLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="Число пассажиров"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/minLayout" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/minusButton"
+            android:layout_width="55dp"
+            android:layout_height="60dp"
+            android:text="−"
+            app:backgroundTint="@color/medium_blue"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/passengerLabel" />
+
+        <TextView
+            android:id="@+id/passengerCount"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:text="1"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@id/plusButton"
+            app:layout_constraintStart_toEndOf="@id/minusButton"
+            app:layout_constraintTop_toTopOf="@id/minusButton" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/plusButton"
+            android:layout_width="55dp"
+            android:layout_height="60dp"
+            android:text="+"
+            app:backgroundTint="@color/fire_brick"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/minusButton" />
+
+        <TextView
+            android:id="@+id/optionsLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Опции"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/minusButton" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/seatChip"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:checkable="true"
+            android:text="Детское кресло"
+            android:textAlignment="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/optionsLabel" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/luggageChip"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:checkable="true"
+            android:text="Багаж"
+            android:textAlignment="center"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintEnd_toStartOf="@id/waitChip"
+            app:layout_constraintStart_toEndOf="@id/seatChip"
+            app:layout_constraintTop_toBottomOf="@id/optionsLabel" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/waitChip"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:checkable="true"
+            android:text="Ожидание"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/optionsLabel" />
+
+
+        <TextView
+            android:id="@+id/demandLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Коэффициент спроса: 1.00"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/seatChip" />
+
+        <SeekBar
+            android:id="@+id/demandSeekBar"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:max="100"
+            android:progress="0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/demandLabel" />
+
+
+        <com.example.taxitripcalculator.PriceStructureView
+            android:id="@+id/priceStructure"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="4dp"
+            app:barHeight="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/demandSeekBar"
+            app:showLabels="true" />
+
+
+        <TextView
+            android:id="@+id/totalText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Итого: 0 ₽"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/priceStructure" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/orderButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="Перейти к подтверждению"
+            app:backgroundTint="#000080"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/totalText" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
