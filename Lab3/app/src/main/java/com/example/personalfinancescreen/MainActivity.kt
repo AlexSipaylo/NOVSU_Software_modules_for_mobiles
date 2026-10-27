@@ -540,12 +540,12 @@ fun StateControls(currentState: UiState, onStateChange: (UiState) -> Unit) {
             Button(onClick = { onStateChange(UiState.Empty) },
                 modifier = Modifier.weight(1f)
             ) {
-                Text(text = "Пусто")
+                Text(text = "Данные")
             }
             Button(onClick = { onStateChange(UiState.Content) },
                 modifier = Modifier.weight(1f)
             ) {
-                Text(text = "Данные")
+                Text(text = "Главная")
             }
         }
     }
