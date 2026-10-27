@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Книга рецептов</string>
+    <string name="empty_title">Здесь пока нет рецептов</string>
+    <string name="empty_description">Добавьте первое блюдо и сохраните его фотографию.</string>
+    <string name="add_recipe">Добавить рецепт</string>
+</resources>

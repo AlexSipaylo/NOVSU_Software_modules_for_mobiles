@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+set -eu
+GRADLE_VERSION="8.9"
+CACHE_ROOT="${GRADLE_USER_HOME:-$HOME/.gradle}/wrapper/dists/gradle-${GRADLE_VERSION}-bin/recipebook"
+GRADLE_EXE="$CACHE_ROOT/gradle-${GRADLE_VERSION}/bin/gradle"
+if [ ! -x "$GRADLE_EXE" ]; then
+    mkdir -p "$CACHE_ROOT"
+    ZIP_FILE="$CACHE_ROOT/gradle-${GRADLE_VERSION}-bin.zip"
+    echo "Gradle ${GRADLE_VERSION} не найден; загружаю дистрибутив..."
+    curl -fL "https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip" -o "$ZIP_FILE"
+    unzip -q -o "$ZIP_FILE" -d "$CACHE_ROOT"
+    rm -f "$ZIP_FILE"
+fi
+exec "$GRADLE_EXE" "$@"
