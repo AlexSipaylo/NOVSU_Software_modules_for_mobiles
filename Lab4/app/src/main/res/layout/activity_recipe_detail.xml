@@ -1,0 +1,76 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:fillViewport="true">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="18dp">
+        <ImageView
+            android:id="@+id/ivDetailPhoto"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:background="@drawable/placeholder_food"
+            android:contentDescription="Фотография готового блюда"
+            android:scaleType="centerCrop" />
+        <TextView
+            android:id="@+id/tvDetailTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/text_primary"
+            android:textSize="27sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/tvDetailMeta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:textColor="@color/purple"
+            android:textSize="15sp" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:text="Ингредиенты" android:textColor="@color/text_primary" android:textSize="19sp" android:textStyle="bold" />
+        <TextView
+            android:id="@+id/tvDetailIngredients"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:lineSpacingExtra="4dp"
+            android:textColor="@color/text_primary"
+            android:textSize="16sp" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:text="Приготовление" android:textColor="@color/text_primary" android:textSize="19sp" android:textStyle="bold" />
+        <TextView
+            android:id="@+id/tvDetailSteps"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:lineSpacingExtra="5dp"
+            android:textColor="@color/text_primary"
+            android:textSize="16sp" />
+        <Button
+            android:id="@+id/btnViewPhoto"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="18dp"
+            android:text="Открыть фото и увеличить"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btnPlanCooking"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="7dp"
+            android:background="@drawable/rounded_button"
+            android:text="Запланировать готовку"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:orientation="horizontal">
+            <Button android:id="@+id/btnEditRecipe" android:layout_width="0dp" android:layout_height="50dp" android:layout_weight="1" android:text="Редактировать" android:textAllCaps="false" />
+            <Button android:id="@+id/btnDeleteRecipe" android:layout_width="0dp" android:layout_height="50dp" android:layout_marginStart="8dp" android:layout_weight="1" android:text="Удалить" android:textAllCaps="false" android:textColor="#B3261E" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

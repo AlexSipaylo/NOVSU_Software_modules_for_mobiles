@@ -1,0 +1,11 @@
+<resources>
+    <color name="purple">#6C5CE7</color>
+    <color name="purple_dark">#5545C8</color>
+    <color name="green">#00A884</color>
+    <color name="background">#F7F7FB</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="text_primary">#25243A</color>
+    <color name="text_secondary">#6D6B7A</color>
+    <color name="border">#E5E4EF</color>
+    <color name="orange">#FFB454</color>
+</resources>
