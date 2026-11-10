@@ -6,7 +6,9 @@
         android:allowBackup="true"
         android:label="Книга рецептов"
         android:supportsRtl="true"
-        android:theme="@style/Theme.RecipeBook">
+        android:theme="@style/Theme.RecipeBook"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round">
 
         <activity android:name=".ImageViewerActivity" android:exported="false" />
         <activity android:name=".RecipeDetailActivity" android:exported="false" />

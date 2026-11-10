@@ -1,0 +1,15 @@
+digraph FinTrack {
+  graph [rankdir=LR, splines=ortho, nodesep=0.55, ranksep=0.8, bgcolor="white", pad=0.25, fontname="Arial", label="FinTrack — упрощённая схема базы данных", labelloc=t, fontsize=18];
+  node [shape=record, style="rounded,filled", fillcolor="#F5F7FB", color="#64748B", fontname="Arial", fontsize=10, margin="0.12,0.08"];
+  edge [color="#475569", fontname="Arial", fontsize=9, arrowsize=0.7];
+  accounts [label="{accounts|PK id\lname\l}"];
+  categories [label="{categories|PK id\lname\ltype\l}"];
+  transactions [label="{transactions|PK id\lFK accountId\lFK categoryId\ltype, amountKopecks\ldate, note\l}", fillcolor="#E8F1FF"];
+  limits [label="{category_limits|PK id\lFK categoryId\lmonth\llimitKopecks\l}", fillcolor="#E8F1FF"];
+  rules [label="{budget_rules|PK id\lminPercent, severity\ltitle, color, icon\l}", fillcolor="#EAF8F0"];
+  payments [label="{recurring_payments|PK id\ltitle, amountKopecks\ldueDate, active\l}", fillcolor="#FFF6E5"];
+  accounts -> transactions [label="1 : N\nCASCADE"];
+  categories -> transactions [label="1 : N\nRESTRICT"];
+  categories -> limits [label="1 : N\nCASCADE"];
+  {rank=same; rules; payments;}
+}

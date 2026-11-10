@@ -1,0 +1,32 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/background">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:padding="20dp">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Месячные лимиты" android:textSize="25sp"
+            android:textStyle="bold" android:textColor="@color/text_primary" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="Выберите категорию и укажите максимально допустимые расходы за месяц."
+            android:textSize="14sp" android:textColor="@color/text_secondary"
+            android:layout_marginTop="6dp" />
+        <Spinner android:id="@+id/categorySpinner" android:layout_width="match_parent"
+            android:layout_height="52dp" android:layout_marginTop="12dp" />
+        <EditText android:id="@+id/limitInput" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:hint="Лимит, ₽"
+            android:inputType="numberDecimal" />
+        <Button android:id="@+id/saveLimitButton" android:layout_width="match_parent"
+            android:layout_height="50dp" android:text="Сохранить лимит"
+            android:textAllCaps="false" />
+        <Button android:id="@+id/deleteLimitButton" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:text="Удалить лимит выбранной категории"
+            android:textAllCaps="false" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Состояние бюджета" android:textSize="18sp"
+            android:textStyle="bold" android:textColor="@color/text_primary"
+            android:layout_marginTop="18dp" />
+        <LinearLayout android:id="@+id/limitList" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:orientation="vertical"
+            android:layout_marginTop="8dp" />
+    </LinearLayout>
+</ScrollView>
